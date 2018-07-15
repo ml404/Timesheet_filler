@@ -9,7 +9,8 @@ public class TimesheetReader {
 
     public XWPFDocument readTimeSheet(String filePath) {
         try {
-            File file = new File(filePath);
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource(filePath).getFile());
             FileInputStream fis = new FileInputStream(file.getAbsolutePath());
             XWPFDocument document = new XWPFDocument(fis);
             fis.close();

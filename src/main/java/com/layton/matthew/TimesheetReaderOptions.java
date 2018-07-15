@@ -6,8 +6,7 @@ import org.kohsuke.args4j.spi.StringArrayOptionHandler;
 import java.util.List;
 
 public class TimesheetReaderOptions {
-    @Option(name="--read",  usage="Time sheet location")
-    protected String readLocation;
+    protected String readLocation = "TimesheetTemplate.docx";
     @Option(name="--write",  usage="Where to write output")
     protected String writeLocation;
     @Option(name="--start", handler = StringArrayOptionHandler.class, usage="Comma delimited list of start times")
